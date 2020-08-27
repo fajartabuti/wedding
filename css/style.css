@@ -8459,7 +8459,7 @@ h5,
           display: none; } }
     .video-hero .text h1 {
       font-family: "Great Vibes", cursive;
-      font-size: 9vw;
+      font-size: 10vw;
       color: #fff; }
 
 #timer {
@@ -8649,7 +8649,7 @@ textarea.form-control {
   font-weight: 700;
   display: block;
   text-transform: uppercase;
-  font-family: "Libre Caslon Text", serif; }
+  font-family: "Crimson Text", serif; }
 
 .ftco-about h2 {
   font-size: 64px;
@@ -8673,8 +8673,8 @@ textarea.form-control {
   margin-bottom: 80px; }
 
 .ftco-about .time {
-  font-family: "Libre Caslon Text", serif;
-  font-size: 48px;
+  font-family: "Crimson Text", serif;
+  font-size: 30px;
   color: rgba(0, 0, 0, 0.4);
   text-transform: uppercase; }
 
