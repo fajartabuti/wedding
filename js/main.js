@@ -81,20 +81,18 @@
 	};
 
 	onePageClick();
-	
 
 	var carousel = function() {
 		$('.carousel-friends').owlCarousel({
 			autoplay: true,
 			autoHeight: true,
-			center: true,
+			center: false,
 			loop: true,
 			items:1,
 			margin: 30,
 			stagePadding: 0,
 			nav: false,
 			dots: true,
-			navText: ['<span class="ion-ios-arrow-back">', '<span class="ion-ios-arrow-forward">'],
 			responsive:{
 				0:{
 					items: 1
@@ -111,14 +109,13 @@
 		$('.carousel-testimony').owlCarousel({
 			autoplay: true,
 			autoHeight: true,
-			center: true,
+			autoWidth: false,
+			center: false,
 			loop: true,
 			items:1,
 			margin: 30,
 			stagePadding: 0,
 			nav: false,
-			dots: true,
-			navText: ['<span class="ion-ios-arrow-back">', '<span class="ion-ios-arrow-forward">'],
 			responsive:{
 				0:{
 					items: 1

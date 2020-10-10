@@ -885,9 +885,9 @@ pre {
     max-width: 25%; }
   .col-md-4 {
     -webkit-box-flex: 0;
-    -ms-flex: 0 0 33.33333%;
-    flex: 0 0 33.33333%;
-    max-width: 33.33333%; }
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%; }
   .col-md-5 {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 41.66667%;
@@ -3796,7 +3796,9 @@ input[type="button"].btn-block {
   -webkit-box-flex: 1;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
-  padding: 1.25rem; }
+  padding: 1.25rem; 
+  margin-top: 10px;
+}
 
 .card-title {
   margin-bottom: 0.75rem; }
@@ -4811,7 +4813,7 @@ a.close.disabled {
   -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 1rem 1rem;
-  border-bottom: 1px solid #dee2e6;
+  /* border-bottom: 1px solid #dee2e6; */
   border-top-left-radius: 0.3rem;
   border-top-right-radius: 0.3rem; }
   .modal-header .close {
@@ -4840,7 +4842,6 @@ a.close.disabled {
   -ms-flex-pack: end;
   justify-content: flex-end;
   padding: 1rem;
-  border-top: 1px solid #dee2e6;
   border-bottom-right-radius: 0.3rem;
   border-bottom-left-radius: 0.3rem; }
   .modal-footer > :not(:first-child) {
@@ -6763,9 +6764,6 @@ button.bg-dark:focus {
 .px-5 {
   padding-right: 3rem !important; }
 
-.pb-5,
-.py-5 {
-  padding-bottom: 3rem !important; }
 
 .pl-5,
 .px-5 {
@@ -8530,7 +8528,9 @@ textarea.form-control {
 
 .ftco-animate {
   opacity: 0;
-  visibility: hidden; }
+  visibility: hidden; 
+  margin-bottom: 20px;
+}
 
 .btn {
   cursor: pointer;
@@ -8827,9 +8827,9 @@ textarea.form-control {
       border-radius: 50%; }
       @media (max-width: 767.98px) {
         .timeline > li > .timeline-badge {
-          width: 80px;
-          height: 80px;
-          margin-left: -15px;
+          width: 70px;
+          height: 70px;
+          margin-left: -5px;
           left: 0; } }
     .timeline > li.timeline-inverted > .timeline-panel {
       float: right; }
@@ -8887,7 +8887,7 @@ textarea.form-control {
       padding: 8px 10px; }
 
 .rsvp-form {
-  padding: 70px 50px 50px 50px;
+  padding: 10px 50px 10px 50px;
   background: #fff; }
   .rsvp-form .form-group {
     margin-bottom: 30px; }
@@ -9021,11 +9021,11 @@ textarea.form-control {
   background-position: center center; }
 
 .ftco-section {
-  padding: 7em 0;
+  padding: 4em 0;
   position: relative; }
   @media (max-width: 767.98px) {
     .ftco-section {
-      padding: 6em 0; } }
+      padding: 2em 0; } }
 
 .ftco-no-pt {
   padding-top: 0 !important; }
@@ -9039,7 +9039,6 @@ textarea.form-control {
 .ftco-footer {
   font-size: 16px;
   background: white;
-  padding: 7em 0;
   z-index: 0;
   position: relative; }
   .ftco-footer .overlay {
@@ -9765,3 +9764,71 @@ textarea.form-control {
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px; } }
+
+.center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+label.error {
+    color: red;
+    font-size: 0.8rem;
+    display: block;
+    margin: 5px 10px 10px 10px;
+}
+
+input.error, textarea.error {
+    border: 1px dashed red;
+    font-weight: 300;
+    color: red;
+}
+
+::-webkit-input-placeholder {
+  font-style: italic;
+  font-size: 0.8rem;
+}
+:-moz-placeholder {
+  font-style: italic; 
+  font-size: 0.8rem; 
+}
+::-moz-placeholder {
+  font-style: italic;  
+  font-size: 0.8rem;
+}
+:-ms-input-placeholder {  
+  font-style: italic; 
+  font-size: 0.8rem;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#guestModal .modal-content {
+  background-size: cover;
+  background-image: url(../images/flowermodal.jpg);
+  background-repeat: no-repeat;
+  width: 100%;
+  height: auto;
+  background-position: center center;
+}
+
+.float-music {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    bottom: 10px;
+    right: 10px;
+    background-color: #f67d7c;
+    opacity: 0.8;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    padding-top: 12px;
+    z-index: 99;
+}

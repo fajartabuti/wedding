@@ -2,62 +2,115 @@
 <html lang="en">
 
 <head>
-	<title>Tatu and Fajar Wedding</title>
+	<title>Akad Nikah Tatu dan Fajar, Akhirnya!!</title>
+	<meta name="description" content="Akhirnya kami menikah, doakan kami ya!">
+	<meta property="og:title" content="Wedding Announcement Fajar and Tatu" />
+	<meta property="og:url" content="https://story.fajartatu.life/" />
+	<meta property="og:description" content="Akhirnya kami menikah, doakan kami ya!">
+	<meta property="og:image" content="images/og.jpg">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+	<link rel="shortcut icon" href="love.ico">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Crimson Text:400,400i,700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
 	<link rel="stylesheet" href="css/animate.css">
-
 	<link rel="stylesheet" href="css/owl.carousel.min.css">
 	<link rel="stylesheet" href="css/owl.theme.default.min.css">
 	<link rel="stylesheet" href="css/magnific-popup.css">
-
 	<link rel="stylesheet" href="css/aos.css">
-
 	<link rel="stylesheet" href="css/ionicons.min.css">
-
 	<link rel="stylesheet" href="css/flaticon.css">
 	<link rel="stylesheet" href="css/icomoon.css">
 	<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-	<!-- <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light site-navbar-target"
-		id="ftco-navbar">
-		<div class="container">
-			<a class="navbar-brand" href="index.html">Hookup</a>
-			<button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse"
-				data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="oi oi-menu"></span> Menu
-			</button>
 
-			<div class="collapse navbar-collapse" id="ftco-nav">
-				<ul class="navbar-nav nav ml-auto">
-					<li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
-					<li class="nav-item"><a href="#groom-bride-section" class="nav-link"><span>Groom &amp;
-								Bride</span></a></li>
-					<li class="nav-item"><a href="#lovestory-section" class="nav-link"><span>Love Story</span></a></li>
-					<li class="nav-item"><a href="#greeting-section" class="nav-link"><span>Greetings</span></a></li>
-					<li class="nav-item"><a href="#people-section" class="nav-link"><span>People</span></a></li>
-					<li class="nav-item"><a href="#when-where-section" class="nav-link"><span>When &amp;
-								Where</span></a></li>
-					<li class="nav-item"><a href="#rsvp-section" class="nav-link"><span>RSVP</span></a></li>
-					<li class="nav-item"><a href="#gallery-section" class="nav-link"><span>Gallery</span></a></li>
-				</ul>
+	<audio id="ouraudio" autoplay loop class="float-music">
+	  Your browser does not support the audio element.
+	</audio>
+	
+	<a onclick="playAudio()" type="button" id="un-mute1" class="float-music" style="display: none;">
+		<img src="images/music.png" width="30px;">
+	</a>
+
+	<a onclick="pauseAudio()" type="button" id="mute1" class="float-music">
+		<img src="images/music-mute.png" width="30px;">
+	</a>
+	
+	<div id="messagemodal" class="modal fade center" role="dialog" data-backdrop="static" data-keyboard="false">
+		<div class="modal-dialog">
+		  <div class="modal-content">
+			<div class="modal-body">
+				<p style="text-align: center;">Terimakasih atas pesanmu.</p>
+				<div class="btn-group" style="width:100%">
+					<p style="width: 50%; text-align: center;">
+						<input id="modalmessageclose" class="btn btn-primary py-3 px-4" data-dismiss="modal" type="submit" value="Tutup">
+					</p>
+					<p style="width: 50%; text-align: center;">
+						<input id="modalgiftclose" class="btn btn-primary py-3 px-4" data-dismiss="modal" type="submit" value="Kirim Hadiah">
+					</p>
+				  </div>
 			</div>
+		  </div>
 		</div>
-	</nav> -->
+	</div>
+	
+	<div id="guestInputModal" class="modal fade center" role="dialog" data-backdrop="static" data-keyboard="false">
+		<div class="modal-dialog">
+		  <div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Yth,</h5>
+			  </div>
+			<div class="modal-body" style="padding: 0 1rem 1rem 1rem;">
+				<p>Mohon ketersediaan submit nama lengkap atau panggilan untuk membuka wedding website invitation kami</p>
+				<form id="basic-form" action="" method="POST">
+					<p>
+					<input type="text" class="form-control" id="guestname" name="guestname" placeholder="Masukkan namamu disini ya" minlength="3" required>
+					</p>
+					<p>
+					<input style="width: 100%;" id="submitGuest" class="btn btn-outline-secondary" data-dismiss="modal" type="submit" value="Yuk Join">
+					</p>
+				</form>
+			</div>
+		  </div>
+		</div>
+	</div>
+	
+	<div id="guestModal" class="modal fade center" role="dialog" data-backdrop="static" data-keyboard="false">
+		<div class="modal-dialog">
+		  <div class="modal-content" backdrop-color>
+			<div class="modal-header">
+			  </div>
+			<div class="modal-body" style="color: black;">
+				<div class="embed-responsive embed-responsive-16by9">
+					<video id="ourvideo" width="320" height="240" controls autoplay>
+					  	Your browser does not support the video tag.
+					</video>
+				</div>
+				<div style="margin-top: 20px;">
+					<p>
+						Kepada,
+					</p>
+					<h3 type="text" id="guest" style="color : #f67e7d"></h4>
+					<p>
+						Kami dengan senang hati untuk mengundang Anda dan berbagi kegembiraan di pernikahan kami secara digital / virtual.
+					</p>
+					<p>
+						<input id="modalclose" class="btn btn-outline-secondary" data-dismiss="modal" type="submit" value="Tutup">
+					</p>
+				</div>
+			</div>
+			<div class="modal-footer">
+			  </div>
+		  </div>
+		</div>
+	</div>
 
-	<section id="home" class="video-hero js-fullheight"
-		style="height: 700px; background-image: url(images/bg_1.jpg); background-size:cover; background-position: top center;"
-		data-stellar-background-ratio="0.5">
-		<div class="overlay"></div>
-		<!-- <a class="player"
-			data-property="{videoURL:'https://www.youtube.com/watch?v=Mjjw19B7rMk',containment:'#home', showControls:false, autoPlay:true, loop:true, mute:true, startAt:0, opacity:1, quality:'default',optimizeDisplay:true}"></a> -->
+	<section class="video-hero js-fullheight" id="home"
+		style="height: 700px; background-image: url(images/bg_1.jpg); background-size:cover; background-position: top center;"> 
 		<div class="container">
 			<div class="row js-fullheight justify-content-center d-flex align-items-center">
 				<div class="col-md-12">
@@ -65,8 +118,8 @@
 						<div class="icon">
 							<span class="flaticon-rose-outline-variant-with-vines-and-leaves"></span>
 						</div>
-						<span class="subheading">The Wedding of</span>
-						<h1>Fajar &amp; Tatu</h1>
+						<span class="subheading">Wedding Ceremony of</span>
+						<h1>Tatu &amp; Fajar</h1>
 						<div id="timer" class="d-flex">
 							<div class="time" id="days"></div>
 							<div class="time pl-3" id="hours"></div>
@@ -79,7 +132,7 @@
 		</div>
 	</section>
 
-	<section class="ftco-section ftco-about ftco-no-pt ftco-no-pb" id="groom-bride-section">
+	<section class="ftco-section ftco-about ftco-no-pt ftco-no-pb" id="announce-section">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
@@ -94,16 +147,31 @@
 								<div class="py-md-4">
 									<div class="row justify-content-start pb-3">
 										<div class="col-md-12 ftco-animate p-4 p-lg-5 text-center">
-											<span class="subheading mb-4">Join us to celebrate <br>the wedding day
+											<span class="subheading mb-4">Join us to celebrate <br>the wedding<br> ceremony day
 												of</span>
 											<div style="padding: 10px;">
-												<h2>Fajar</h2>
-												<h2>&</h2>
 												<h2>Tatu</h2>
+												<h2>&</h2>
+												<h2>Fajar</h2>
 											</div>
-											<span class="subheading">Which is celebration on</span>
+											<span class="subheading">on</span>
 											<p class="time mb-4"><span>OKT | 17 | 2020</span></p>
-											<span class="subheading mb-5">Ardhya Loka Halim</span>
+											<div style="margin: 10px 30px 20px 30px;font-size: 0.7em;">
+												<span>
+													Dikarenakan keterbatasan kondisi saat ini, mohon maaf kami hanya mengundang keluarga inti untuk menghadiri acara secara langsung.
+												</span>
+											</br></br>
+												<span>
+													Dan kami mengundang teman dan rekan-rekan semua untuk menyaksikan prosesi Akad Nikah kami dengan bergabung di live streaming berikut.
+												</span>
+											</div>
+											<p><a id="zoombutton" style="text-transform: uppercase;"
+												class="btn btn-primary py-3 px-4">
+												<span>
+													Zoom Meeting Link
+												</span>
+											</a>
+											</p>	
 										</div>
 									</div>
 								</div>
@@ -115,45 +183,9 @@
 		</div>
 	</section>
 
-	<section class="ftco-section bg-section">
+	<section class="ftco-section bg-section" id="lovestory-section">
 		<div class="overlay-top" style="background-image: url(images/top-bg.jpg);"></div>
 		<div class="overlay-bottom" style="background-image: url(images/bottom-bg.jpg);"></div>
-		<!-- <div class="container">
-			<div class="row justify-content-center pb-5">
-				<div class="col-md-12 text-center heading-section ftco-animate">
-					<span class="clone">Bride &amp; Groom</span>
-					<h2 class="mb-3">Bride &amp; Groom</h2>
-				</div>
-			</div>
-			<div class="row justify-content-center">
-				<div class="col-md-10">
-					<div class="row">
-						<div class="col-md-6 text-center d-flex align-items-stretch">
-							<div class="bride-groom ftco-animate">
-								<div class="img" style="background-image: url(images/groom.jpg);"></div>
-								<div class="text mt-4 px-4">
-									<h2>Francisco Fredricksen</h2>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and
-										Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
-										right at the coast of the Semantics, a large language ocean.</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 text-center d-flex align-items-stretch">
-							<div class="bride-groom ftco-animate">
-								<div class="img" style="background-image: url(images/bride.jpg);"></div>
-								<div class="text mt-4 px-4">
-									<h2>Laura Moorey</h2>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and
-										Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
-										right at the coast of the Semantics, a large language ocean.</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div> -->
 		<div class="container">
 			<div class="row justify-content-center pb-5">
 				<div class="col-md-12 text-center heading-section ftco-animate">
@@ -173,8 +205,7 @@
 									<h3 class="timeline-title">First We Meet</h3>
 								</div>
 								<div class="timeline-body">
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and
-										Consonantia, there live the blind texts. Separated they live in .</p>
+									<p>the first time we met, at the actual time and place we went with our friends. mutually disinterested and even dislike of each other.</p>
 								</div>
 							</div>
 						</li>
@@ -187,8 +218,11 @@
 									<h3 class="timeline-title">First Date</h3>
 								</div>
 								<div class="timeline-body">
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and
-										Consonantia, there live the blind texts. Separated they live in .</p>
+									<p>as time goes by.
+										there is a friend of ours who is a "makcomblang" (thanks to pay).
+										finally we decide to get to know each other more deeply.
+										ciyee jadian deh ...
+									</p>
 								</div>
 							</div>
 						</li>
@@ -201,8 +235,13 @@
 									<h3 class="timeline-title">We're Engaged</h3>
 								</div>
 								<div class="timeline-body">
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and
-										Consonantia, there live the blind texts. Separated they live in .</p>
+									<p>It took us a long time to convince each other.
+										understanding each other, introspecting each other, reducing each other's egos, and learning to be better.
+										until finally the two families will unite.
+									</p>
+									<p>
+										one step closer 💍💝
+									</p>
 								</div>
 							</div>
 						</li>
@@ -211,79 +250,6 @@
 			</div>
 		</div>
 	</section>
-
-	<!-- <section class="ftco-section" id="lovestory-section">
-		<div class="container">
-			<div class="row justify-content-center pb-5">
-				<div class="col-md-12 text-center heading-section ftco-animate">
-					<span class="clone">Love Story</span>
-					<h2 class="mb-3">Love Story</h2>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12">
-					<ul class="timeline animate-box">
-						<li class="animate-box">
-							<div class="timeline-badge" style="background-image:url(images/couple-1.jpg);"></div>
-							<div class="timeline-panel ftco-animate text-md-right">
-								<div class="overlay"></div>
-								<div class="timeline-heading">
-									<span class="date">June 10, 2017</span>
-									<h3 class="timeline-title">First We Meet</h3>
-								</div>
-								<div class="timeline-body">
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and
-										Consonantia, there live the blind texts. Separated they live in .</p>
-								</div>
-							</div>
-						</li>
-						<li class="timeline-inverted animate-box">
-							<div class="timeline-badge" style="background-image:url(images/couple-2.jpg);"></div>
-							<div class="timeline-panel ftco-animate">
-								<div class="overlay overlay-2"></div>
-								<div class="timeline-heading">
-									<span class="date">June 10, 2017</span>
-									<h3 class="timeline-title">First Date</h3>
-								</div>
-								<div class="timeline-body">
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and
-										Consonantia, there live the blind texts. Separated they live in .</p>
-								</div>
-							</div>
-						</li>
-						<li class="animate-box">
-							<div class="timeline-badge" style="background-image:url(images/couple-3.jpg);"></div>
-							<div class="timeline-panel ftco-animate text-md-right">
-								<div class="overlay"></div>
-								<div class="timeline-heading">
-									<span class="date">June 14, 2017</span>
-									<h3 class="timeline-title">In A Relationship</h3>
-								</div>
-								<div class="timeline-body">
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and
-										Consonantia, there live the blind texts. Separated they live in .</p>
-								</div>
-							</div>
-						</li>
-						<li class="timeline-inverted animate-box">
-							<div class="timeline-badge" style="background-image:url(images/couple-4.jpg);"></div>
-							<div class="timeline-panel ftco-animate">
-								<div class="overlay overlay-2"></div>
-								<div class="timeline-heading">
-									<span class="date">May. 10, 2019</span>
-									<h3 class="timeline-title">We're Engaged</h3>
-								</div>
-								<div class="timeline-body">
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and
-										Consonantia, there live the blind texts. Separated they live in .</p>
-								</div>
-							</div>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</section> -->
 
 	<section class="ftco-section bg-light" id="greeting-section">
 		<div class="container">
@@ -295,170 +261,61 @@
 			</div>
 			<div class="row ftco-animate">
 				<div class="col-md-12">
-					<div class="carousel-testimony owl-carousel ftco-owl">
-						<div class="item">
-							<div class="testimony-wrap py-4">
-								<div class="text">
-									<p class="mb-4">Far far away, behind the word mountains, far from the countries
-										Vokalia and Consonantia, there live the blind texts.</p>
-									<div class="d-flex align-items-center">
-										<div class="user-img" style="background-image: url(images/person_1.jpg)"></div>
-										<div class="pl-3">
-											<p class="name">Roger Scott</p>
-											<span class="position">Marketing Manager</span>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="testimony-wrap py-4">
-								<div class="text">
-									<p class="mb-4">Far far away, behind the word mountains, far from the countries
-										Vokalia and Consonantia, there live the blind texts.</p>
-									<div class="d-flex align-items-center">
-										<div class="user-img" style="background-image: url(images/person_2.jpg)"></div>
-										<div class="pl-3">
-											<p class="name">Roger Scott</p>
-											<span class="position">Marketing Manager</span>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="testimony-wrap py-4">
-								<div class="text">
-									<p class="mb-4">Far far away, behind the word mountains, far from the countries
-										Vokalia and Consonantia, there live the blind texts.</p>
-									<div class="d-flex align-items-center">
-										<div class="user-img" style="background-image: url(images/person_3.jpg)"></div>
-										<div class="pl-3">
-											<p class="name">Roger Scott</p>
-											<span class="position">Marketing Manager</span>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="testimony-wrap py-4">
-								<div class="text">
-									<p class="mb-4">Far far away, behind the word mountains, far from the countries
-										Vokalia and Consonantia, there live the blind texts.</p>
-									<div class="d-flex align-items-center">
-										<div class="user-img" style="background-image: url(images/person_1.jpg)"></div>
-										<div class="pl-3">
-											<p class="name">Roger Scott</p>
-											<span class="position">Marketing Manager</span>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="testimony-wrap py-4">
-								<div class="text">
-									<p class="mb-4">Far far away, behind the word mountains, far from the countries
-										Vokalia and Consonantia, there live the blind texts.</p>
-									<div class="d-flex align-items-center">
-										<div class="user-img" style="background-image: url(images/person_2.jpg)"></div>
-										<div class="pl-3">
-											<p class="name">Roger Scott</p>
-											<span class="position">Marketing Manager</span>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+					<div id="owl-child">
+					</div>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-md-7">
+					<div class="row justify-content-center pb-5">
+						<p class="mb-3" style="margin:20px 0 20px 0; color: #f67d7c;">Leave your sweet message here</p>
+					</div>
+					<div>
+						<form id="message-form" action="" method="POST">
+							<p>
+								<input type="text" class="form-control" id="messagename" name="messagename" placeholder="masukkan namamu disini ya" minlength="3" required>
+							</p>
+							<p>
+								<textarea id="messagetext" name="messagetext" cols="30" rows="2" class="form-control" placeholder="masukkan pesan dan doamu untuk kita disini ya"></textarea>
+							</p>
+							<p>
+								<button style="width: 50%; margin-left: 25%;" id="submitmessage" class="btn btn-primary py-3 px-4">Kirim Pesan</button>
+							</p>
+						</form>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<section class="ftco-section" id="people-section">
-		<div class="container-fluid px-md-5">
+	<section class="ftco-section" id="gift-section">
+		<div class="container">
 			<div class="row justify-content-center pb-5">
 				<div class="col-md-12 text-center heading-section ftco-animate">
-					<span class="clone">People</span>
-					<h2 class="mb-3">Family &amp; Friends</h2>
+					<span class="clone">Gift</span>
+					<h2 class="mb-3">Send Us Gift?</h2>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-md-12">
-					<div class="carousel-friends owl-carousel ftco-owl ftco-animate">
-						<div class="item">
-							<div class="people text-center">
-								<div class="img" style="background-image: url(images/groom-men-1.jpg);"></div>
-								<div class="text">
-									<h3>Mark Tomy</h3>
-									<span>Groomsmen</span>
-								</div>
-							</div>
+			<div class="row justify-content-center">
+				<div class="col-md-7">
+					<div class="row justify-content-center">
+						<div class="col-md-7" style="margin: 0 10px 0 10px;font-size: 0.7em; text-align: center;">
+							<span>Berkenan memberikan dan berbagi kebahagiaan untuk kami? 
+							</br>Scan atau klik QR Code dibawah ini.</span>
 						</div>
-						<div class="item">
-							<div class="people text-center">
-								<div class="img" style="background-image: url(images/groom-men-2.jpg);"></div>
-								<div class="text">
-									<h3>John Henceworth</h3>
-									<span>Groomsmen</span>
-								</div>
-							</div>
+						<a href="https://saweria.co/fajartatu" target="_blank">
+							<img width="290" height="290" src="images/saweria.png" alt="">								
+						</a>
+						<div style="margin: 10px;">
+							<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+								Cara Lainnya
+							</button>
 						</div>
-						<div class="item">
-							<div class="people text-center">
-								<div class="img" style="background-image: url(images/groom-men-3.jpg);"></div>
-								<div class="text">
-									<h3>Rey Cooper</h3>
-									<span>Groomsmen</span>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="people text-center">
-								<div class="img" style="background-image: url(images/groom-men-4.jpg);"></div>
-								<div class="text">
-									<h3>Robert Chan</h3>
-									<span>Groomsmen</span>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="people text-center">
-								<div class="img" style="background-image: url(images/bridesmaid-1.jpg);"></div>
-								<div class="text">
-									<h3>Rose Jones</h3>
-									<span>Bridesmaid</span>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="people text-center">
-								<div class="img" style="background-image: url(images/bridesmaid-2.jpg);"></div>
-								<div class="text">
-									<h3>Mary Dell</h3>
-									<span>Bridesmaid</span>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="people text-center">
-								<div class="img" style="background-image: url(images/bridesmaid-3.jpg);"></div>
-								<div class="text">
-									<h3>Alicia Brean</h3>
-									<span>Bridesmaid</span>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="people text-center">
-								<div class="img" style="background-image: url(images/bridesmaid-4.jpg);"></div>
-								<div class="text">
-									<h3>Angel Worth</h3>
-									<span>Bridesmaid</span>
-								</div>
-							</div>
+					</div>
+					<div class="collapse" id="collapseExample">
+						<div class="card card-body">
+							<img src="images/bca.png" class="img-fluid" alt="Responsive image">
+							<img src="images/jenius.png" class="img-fluid" alt="Responsive image">
 						</div>
 					</div>
 				</div>
@@ -466,7 +323,7 @@
 		</div>
 	</section>
 
-	<section class="ftco-section bg-light" id="when-where-section">
+	<section class="ftco-section bg-light" id="ceremony-section" >
 		<div class="container">
 			<div class="row justify-content-center pb-5">
 				<div class="col-md-12 text-center heading-section ftco-animate">
@@ -474,19 +331,26 @@
 					<h2 class="mb-3">Place &amp; Time</h2>
 				</div>
 			</div>
-			<div class="row">
+			<div class="row justify-content-center pb-5">
 				<div class="col-md-4 ftco-animate">
 					<div class="place img" style="background-image: url(images/place-2.jpg);">
 						<div class="text text-center">
 							<span class="icon flaticon-wedding-kiss"></span>
 							<h3>The Ceremony</h3>
-							<p><span>Saturday, Oktober 10th, 2020</span><br><span>15:00 WIB</span></p>
-							<p><span>Ardhya Loka Halim</span></p>
-							<p><a href="#" class="btn-custom">See Map</a></p>
+							<p><span>Saturday, Oktober 17th, 2020</span><br><span>09:00 WIB</span></p>
+							<p><a href="https://zoom.us/j/95311238524?pwd=dGFPeDFZeHVKbFkrNzRLSTlBYlJtZz09" target="_blank" class="btn-custom">Open Zoom</a></p>
+							<div style="margin: 10px 10px 20px 10px;font-size: 0.7em;">
+								<span>Pastikan aplikasi <img src="images/zoom.png" style="max-width:60px; padding:0 5px 0 5px;"> 
+									sudah terpasang pada perangkat anda.
+								</br>
+								</br>
+								Kami sangat mengharapkan do`a dan restu untuk mengiringi niat tulus kami, sehingga prosesi akad nikah senantiasa dalam Ridho dan Rahmat Allah SWT.
+								</span>
+							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-md-4 ftco-animate">
+				<!-- <div class="col-md-4 ftco-animate">
 					<div class="place img" style="background-image: url(images/place-1.jpg);">
 						<div class="text text-center">
 							<span class="icon flaticon-reception-bell"></span>
@@ -509,59 +373,7 @@
 							<p><a href="#" class="btn-custom">See Map</a></p>
 						</div>
 					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section class="ftco-section bg-secondary" id="rsvp-section">
-		<div class="container">
-			<div class="row justify-content-center pb-5">
-				<div class="col-md-12 text-center heading-section ftco-animate">
-					<span class="clone">RSVP</span>
-					<h2 class="mb-3">Are Your Attending?</h2>
-				</div>
-			</div>
-			<div class="row justify-content-center">
-				<div class="col-md-7">
-					<form action="#" class="rsvp-form ftco-animate">
-						<div class="">
-							<div class="form-group">
-								<input type="text" class="form-control" placeholder="Name">
-							</div>
-							<div class="form-group">
-								<input type="text" class="form-control" placeholder="Your email">
-							</div>
-						</div>
-						<div class="">
-							<div class="form-group">
-								<div class="form-field">
-									<div class="select-wrap">
-										<div class="icon d-flex align-items-center justify-content-center"><span
-												class="ion-ios-arrow-down"></span></div>
-										<select name="" id="" class="form-control">
-											<option value="">Guest</option>
-											<option value="">1</option>
-											<option value="">2</option>
-											<option value="">3</option>
-											<option value="">4</option>
-											<option value="">5</option>
-										</select>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="">
-							<div class="form-group">
-								<textarea name="" id="" cols="30" rows="2" class="form-control"
-									placeholder="Message"></textarea>
-							</div>
-							<div class="form-group">
-								<input type="submit" value="I am attending" class="btn btn-primary py-3 px-4">
-							</div>
-						</div>
-					</form>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</section>
@@ -617,7 +429,7 @@
         	</div>
         </div>
     	</div>
-    </section>
+	</section>
 
 	<footer class="ftco-footer ftco-section">
 		<div class="overlay"></div>
@@ -643,9 +455,13 @@
 			<circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
 			<circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
 				stroke="#F96D00" /></svg></div>
-
-
+	
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/7.22.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.22.0/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.22.0/firebase-database.js"></script>
 	<script src="js/jquery.min.js"></script>
+	<script src="js/modal-dialog.js"></script>
 	<script src="js/jquery-migrate-3.0.1.min.js"></script>
 	<script src="js/popper.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
@@ -655,15 +471,14 @@
 	<script src="js/owl.carousel.min.js"></script>
 	<script src="js/jquery.magnific-popup.min.js"></script>
 	<script src="js/aos.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
 	<script src="js/jquery.animateNumber.min.js"></script>
 	<script src="js/jquery.mb.YTPlayer.min.js"></script>
 	<script src="js/scrollax.min.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false">
-	</script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
 	<script src="js/google-map.js"></script>
-
 	<script src="js/main.js"></script>
-
+	<script src="js/app.js"></script>
 </body>
 
 </html>
